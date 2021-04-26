@@ -38,7 +38,8 @@ namespace Index {
                 commitMessage += `\n${issueTrackerName}: ${issueId}`;
             }
 
-            const command = `git commit -m '${commitMessage}'`;
+            const eof = "NODE_COMMIT_EOF_NODE";
+            const command = `git commit -F- << ${eof} \n${commitMessage}\n${eof}`;
             exec(command, (error: { message: any; }, stdout: any, stderr: any) => {
                 if (error) {
                     console.log(`error: ${error.message}`);
