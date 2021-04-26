@@ -1,0 +1,22 @@
+{
+  "name": "commit-cli",
+  "version": "1.0.0",
+  "description": "CLI tool for better commits",
+  "main": "dist/index.js",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "start": "tsc && node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/figlet": "1.2.0",
+    "@types/inquirer": "6.5.0",
+    "@types/node": "14.0.5",
+    "chalk": "4.0.0",
+    "figlet": "1.4.0",
+    "inquirer": "7.1.0",
+    "typescript": "3.9.3"
+  }
+}
