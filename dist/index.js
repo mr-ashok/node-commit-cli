@@ -32,7 +32,8 @@ var Index;
                 const issueId = answers[constants.QUESTION_KEY_ISSUE_TRACKER_ID];
                 commitMessage += `\n${issueTrackerName}: ${issueId}`;
             }
-            const command = `git commit -m '${commitMessage}'`;
+            const eof = "NODE_COMMIT_EOF_NODE";
+            const command = `git commit -F- << ${eof} \n${commitMessage}\n${eof}`;
             exec(command, (error, stdout, stderr) => {
                 if (error) {
                     console.log(`error: ${error.message}`);
