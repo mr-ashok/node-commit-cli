@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "CLI tool for better commits",
   "main": "dist/index.js",
-  "bin": "./dist/index.js",
+  "bin": {
+    "commit-cli": "./dist/index.js"
+  },
   "scripts": {
     "start": "tsc && node .",
     "test": "echo \"Error: no test specified\" && exit 1"
